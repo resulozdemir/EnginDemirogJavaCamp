@@ -1,5 +1,4 @@
 package oopWithNLayeredApp.dataAccess;
-
 import oopWithNLayeredApp.entities.Product;
 
 public class JdbcProductDao implements ProductDao {
