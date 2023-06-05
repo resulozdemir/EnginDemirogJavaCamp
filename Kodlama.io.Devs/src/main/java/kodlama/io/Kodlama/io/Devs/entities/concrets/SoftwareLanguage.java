@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,4 +16,19 @@ import lombok.Setter;
 public class SoftwareLanguage {
     private int id;
     private String name;
+    private List<String> subTechnology;
+
+    public SoftwareLanguage(int id, String name) {
+        this.id=id;
+        this.name=name;
+        this.subTechnology = new ArrayList<String>();
+    }
+
+    public void setSubTechnology(String subTechnology) {
+        this.subTechnology.add(subTechnology);
+    }
+
+    public String getName() {
+        return name;
+    }
 }

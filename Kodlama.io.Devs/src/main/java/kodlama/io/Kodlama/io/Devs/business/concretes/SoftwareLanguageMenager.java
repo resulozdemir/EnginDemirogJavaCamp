@@ -19,8 +19,13 @@ public class SoftwareLanguageMenager implements SoftwareLanguageService {
     }
 
     @Override
-    public List<SoftwareLanguage> add(int id,String name) {
-        return softwareLanguageRepository.add(id,name);
+    public List<SoftwareLanguage> addLanguage(int id,String name) {
+        return softwareLanguageRepository.addLanguage(id,name);
+    }
+
+    @Override
+    public List<SoftwareLanguage> addSubTechnology(int id,String name,String subLanguage) {
+        return softwareLanguageRepository.addSubTechnology(id,name,subLanguage);
     }
 
     @Override

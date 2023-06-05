@@ -21,7 +21,7 @@ public class InMemorySoftwareLanguageRepository implements SoftwareLanguageRepos
     }
 
     @Override
-    public List<SoftwareLanguage> add(int id, String name) {
+    public List<SoftwareLanguage> addLanguage(int id, String name) {
         boolean hasDuplicate = false;
 
         for (SoftwareLanguage language : softwareLanguages) {
@@ -32,18 +32,29 @@ public class InMemorySoftwareLanguageRepository implements SoftwareLanguageRepos
         }
 
         if (!hasDuplicate && !name.equals("")) {
-            softwareLanguages.add(new SoftwareLanguage(id - 1, name));
+            softwareLanguages.add(new SoftwareLanguage(id, name));
         }
 
         return softwareLanguages;
     }
 
-
-
-
     @Override
     public List<SoftwareLanguage> delete(int id) {
         softwareLanguages.remove(id-1);
+        return softwareLanguages;
+    }
+
+    @Override
+    public List<SoftwareLanguage> addSubTechnology(int id,String name,String subTechnology) {
+        for(SoftwareLanguage softwareLanguage: softwareLanguages){
+            if(softwareLanguage.getName().equals(name) && softwareLanguage.getId() == id){
+                softwareLanguage.setSubTechnology(subTechnology);
+                break;
+            }
+        }
+        /*if(softwareLanguages.get(id).getName().equals(name)){
+            softwareLanguages.get(id).setSubTechnology(id,subTechnology + ", ");
+        }*/
         return softwareLanguages;
     }
 

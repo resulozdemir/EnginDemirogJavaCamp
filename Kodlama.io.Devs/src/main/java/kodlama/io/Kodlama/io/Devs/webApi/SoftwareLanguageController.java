@@ -25,9 +25,9 @@ public class SoftwareLanguageController {
         return softwareLanguageService.getAll();
     }
 
-    @GetMapping("/add")
-    public List<SoftwareLanguage> add(int id,String name){
-        return softwareLanguageService.add(id,name);
+    @GetMapping("/addLanguage")
+    public List<SoftwareLanguage> addLanguage(int id,String name){
+        return softwareLanguageService.addLanguage(id,name);
     }
 
     @GetMapping("/delete")
@@ -45,5 +45,8 @@ public class SoftwareLanguageController {
         return softwareLanguageService.upgrade(id,name);
     }
 
-
+    @GetMapping("/addSubLanguage")
+    public List<SoftwareLanguage> addSubTechnology(int id,String name,String subLanguage){
+        return softwareLanguageService.addSubTechnology(id,name,subLanguage);
+    }
 }

@@ -5,7 +5,9 @@ import kodlama.io.Kodlama.io.Devs.entities.concrets.SoftwareLanguage;
 import java.util.List;
 
 public interface SoftwareLanguageRepository {
-    List<SoftwareLanguage> add(int id,String name);
+    List<SoftwareLanguage> addLanguage(int id,String name);
+
+    List<SoftwareLanguage> addSubTechnology(int id,String name,String subTechnology);
 
     List<SoftwareLanguage> delete(int id);
     List<SoftwareLanguage> upgrade(int id,String name);
